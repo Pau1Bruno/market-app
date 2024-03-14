@@ -11,54 +11,54 @@ interface ProductItemProps {
 }
 
 export const ProductItem = ({ product }: ProductItemProps) => {
-    const [productCount, setProductCount] = useState(0);
-
+    const [ productCount, setProductCount ] = useState(0);
+    
     const useHandleAdd = () => {
         useDispatch(
             addOneToCart({ product: product, count: productCount + 1 })
         );
         setProductCount(productCount + 1);
     };
-
+    
     const useHandleRemove = () => {
         useDispatch(
             removeOneFromCart({ product: product, count: productCount - 1 })
         );
         setProductCount(productCount - 1);
     };
-
+    
     const useHandleClear = async () => {
         useDispatch(deleteFromCart(product.id));
         setProductCount(0);
     };
-
+    
     const useDispatch = useAppDispatch();
-
+    
     return (
-        <Div className={styles.grid}>
-            <Image size={128} src={product.image}></Image>
-            <p className={styles.title}>{product.title}</p>
-            <Div className={styles.cart}>
-                <Text className={styles.price}>Price: {product.price} $</Text>
-                <ButtonGroup className={styles.buttons}>
+        <Div className={ styles.grid }>
+            <Image size={ 128 } src={ product.image }></Image>
+            <p className={ styles.title }>{ product.title }</p>
+            <Div className={ styles.cart }>
+                <Text className={ styles.price }>Цена: { product.price } руб.</Text>
+                <ButtonGroup className={ styles.buttons }>
                     <Button
-                        disabled={productCount === 0}
-                        onClick={useHandleRemove}
+                        disabled={ productCount === 0 }
+                        onClick={ useHandleRemove }
                     >
                         -
                     </Button>
-                    <Text className={styles.count}>{productCount}</Text>
+                    <Text className={ styles.count }>{ productCount }</Text>
                     <Button
-                        disabled={productCount >= 10}
-                        onClick={useHandleAdd}
+                        disabled={ productCount >= 10 }
+                        onClick={ useHandleAdd }
                     >
                         +
                     </Button>
                     <Button
-                        disabled={productCount === 0}
-                        onClick={useHandleClear}
+                        disabled={ productCount === 0 }
+                        onClick={ useHandleClear }
                     >
-                        <Icon16Clear />
+                        <Icon16Clear/>
                     </Button>
                 </ButtonGroup>
             </Div>

@@ -9,15 +9,14 @@ interface CartItemProps {
 
 export const CartItem = ({ cartProduct }: CartItemProps) => {
     return (
-        <Div className={styles.container}>
-            <Text>{cartProduct.product.title}</Text>
-            <Spacing size={16}>
-                <Separator />
+        <Div className={ styles.container }>
+            <Text>{ cartProduct.product.title }</Text>
+            <Spacing size={ 16 }>
+                <Separator/>
             </Spacing>
-            <Text>count: {cartProduct.count}</Text>
+            <Text>Кол-во: { cartProduct.count }</Text>
             <Text>
-                cost:{' '}
-                {(cartProduct.count * cartProduct.product.price).toFixed(2)} ${' '}
+                Стоимость: { (cartProduct.count * cartProduct.product.price).toFixed(2) } руб.
             </Text>
         </Div>
     );
