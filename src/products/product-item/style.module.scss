@@ -2,8 +2,9 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  width: 200px;
-  max-width: 200px;
+  max-width: 300px;
+
+  height: 300px;
 
   align-items: center;
   justify-content: space-between;
@@ -11,35 +12,36 @@
   border-radius: 25px;
 
   .title {
+    text-align: center;
     padding: 10px;
-    width: 100px;
+    max-width: 150px;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  .buttons {
-    padding: 5px;
+  .cart {
+    padding: 0;
 
-    .asyncClear {
-      position: relative;
+    .price {
+      text-align: center;
+      padding: 5px;
+    }
 
-      :after {
-        content: "";
-        border-radius: 8px;
-        background-color: rgba(250, 7, 7, 0.2);
-        display: block;
-        position: absolute;
-        width: 100%;
+    .buttons {
+      margin: 5px;
+      width: 180px;
+      display: flex;
+      justify-content: space-between;
+
+      .count {
+        text-align: center;
         height: 100%;
-        left: 0;
-        top: 0;
-        opacity: 0;
-        transition: width 1s linear,
-        opacity 0.5s ease 1s;
-      }
-
-      :active:after {
-        width: 0;
-        opacity: 1;
-        transition: 0s;
+        margin-top: auto;
+        margin-bottom: auto;
       }
     }
   }

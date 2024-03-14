@@ -1,0 +1,20 @@
+.scroll {
+  overflow-y: scroll;
+  position: absolute;
+  height: 100vh;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sum {
+    text-align: center;
+  }
+}
