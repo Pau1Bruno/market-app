@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { Product } from './type';
+import { Product } from './types';
 
 export const productsApiSlice = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: 'https://fakestoreapi.com/products' }),

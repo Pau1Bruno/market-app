@@ -1,20 +1,16 @@
 import React, { useState } from 'react';
 import { Button, ButtonGroup, Div, Image, Text } from '@vkontakte/vkui';
-import { Product } from '../type';
+import { Product } from '../types';
 import styles from './style.module.scss';
 import { Icon16Clear } from '@vkontakte/icons';
 import { useAppDispatch } from '../../app/hooks';
-import {
-    addOneToCart,
-    removeOneFromCart,
-    deleteFromCart,
-} from '../../cart/cartSlice';
+import { addOneToCart, deleteFromCart, removeOneFromCart } from '../../cart';
 
 interface ProductItemProps {
     product: Product;
 }
 
-const ProductItem = ({ product }: ProductItemProps) => {
+export const ProductItem = ({ product }: ProductItemProps) => {
     const [productCount, setProductCount] = useState(0);
 
     const useHandleAdd = () => {
@@ -69,5 +65,3 @@ const ProductItem = ({ product }: ProductItemProps) => {
         </Div>
     );
 };
-
-export default ProductItem;

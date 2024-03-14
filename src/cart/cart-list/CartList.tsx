@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Div, FixedLayout, Group, Header, Panel, Text } from '@vkontakte/vkui';
 import { useAppSelector } from '../../app/hooks';
 import { selectCart } from '../cartSlice';
-import CartItem from '../cart-item';
-import styles from './styles.module.scss';
+import styles from './CartList.module.scss';
+import { CartItem } from '../index';
 
-const Cart = () => {
+export const CartList = () => {
     const cart = useAppSelector(selectCart);
-    const [ summary, setSummary ] = useState<number>(0);
-    
+    const [summary, setSummary] = useState<number>(0);
+
     useEffect(() => {
         let sum: number = cart.reduce(
             (prev, curr) => prev + Number(curr.product.price) * curr.count,
@@ -16,29 +16,27 @@ const Cart = () => {
         );
         sum = Number(sum.toFixed(2));
         setSummary(sum);
-    }, [ cart ]);
-    
+    }, [cart]);
+
     return (
         <FixedLayout>
             <Panel id="cart">
                 <Group
-                    className={ styles.scroll }
-                    header={ <Header mode="secondary">Cart</Header> }
+                    className={styles.scroll}
+                    header={<Header mode="secondary">Cart</Header>}
                 >
-                    <Div className={ styles.container }>
-                        { cart &&
+                    <Div className={styles.container}>
+                        {cart &&
                             cart.map((cartProduct) => (
                                 <CartItem
-                                    key={ cartProduct.product.id }
-                                    cartProduct={ cartProduct }
+                                    key={cartProduct.product.id}
+                                    cartProduct={cartProduct}
                                 />
-                            )) }
+                            ))}
                     </Div>
-                    <Text className={ styles.sum }>Итого: { summary } $</Text>
+                    <Text className={styles.sum}>Summary: {summary} $</Text>
                 </Group>
             </Panel>
         </FixedLayout>
     );
 };
-
-export default Cart;

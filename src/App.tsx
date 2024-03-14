@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { AppRoot, SplitCol, SplitLayout } from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
-import ProductList from './products/product-list';
-import Cart from './cart/cart-list';
+import { ProductList } from './products';
+import { CartList } from './cart';
 import './global.scss';
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
                 </SplitCol>
 
                 <SplitCol width="25%" autoSpaced>
-                    <Cart />
+                    <CartList />
                 </SplitCol>
             </SplitLayout>
         </AppRoot>
