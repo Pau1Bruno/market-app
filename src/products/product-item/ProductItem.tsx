@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, ButtonGroup, Div, Image, Text } from '@vkontakte/vkui';
 import { Product } from '../types';
-import styles from './style.module.scss';
+import styles from './ProductItem.module.scss';
 import { Icon16Clear } from '@vkontakte/icons';
 import { useAppDispatch } from '../../app/hooks';
 import { addOneToCart, deleteFromCart, removeOneFromCart } from '../../cart';
