@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/market-app/static/css/main.2cedc4dc.css",
-    "main.js": "/market-app/static/js/main.cd94ee5f.js",
+    "main.css": "/market-app/static/css/main.285ef3e3.css",
+    "main.js": "/market-app/static/js/main.b72f2433.js",
     "index.html": "/market-app/index.html",
-    "main.2cedc4dc.css.map": "/market-app/static/css/main.2cedc4dc.css.map",
-    "main.cd94ee5f.js.map": "/market-app/static/js/main.cd94ee5f.js.map"
+    "main.285ef3e3.css.map": "/market-app/static/css/main.285ef3e3.css.map",
+    "main.b72f2433.js.map": "/market-app/static/js/main.b72f2433.js.map"
   },
   "entrypoints": [
-    "static/css/main.2cedc4dc.css",
-    "static/js/main.cd94ee5f.js"
+    "static/css/main.285ef3e3.css",
+    "static/js/main.b72f2433.js"
   ]
 }
